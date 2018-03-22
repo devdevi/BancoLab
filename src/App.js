@@ -1,64 +1,76 @@
 import React, { Component } from 'react';
-import {Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
+import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid , Col , Row } from 'react-bootstrap';
+import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
 import User from './components/User';
-import ProductList from './components/ProductList';
+import UserList from './components/UserList';
+import Services from './Components/Services';
+import Cargando from './Components/Cargando';
+
 import './App.css';
 
 class App extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleChange = this.handleChange.bind(this);
-
+  constructor() {
+    super();
     this.state = {
-      value: ''
+      value: '',
+      data:null,
+      nombre:null,
     };
+    
+  }
+  handleTransfer =(event) => {
+    event.preventDefault();
+    return(
+      alert('hello baby')
+    )
+  
   }
 
-
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
-  state = { data: [] }
-
+  
   _handleResults = (data) => {
-    this.setState({ data })
+    const name = data.data
+    const nombre = name.nombre
+    console.log(name,nombre)
+    this.setState({ data ,
+      nombre,
+      })
   }
 
-  _renderResults () {
-    const { data } = this.state
+  renderUser(data) {
     console.log(data)
-    return data.map(product => {
-      return (
-        <ProductList 
-          key={product.rut}
-          name={product.name} 
-          rut={product.rut}
-        />
+    const name = data.data
+    const nombre = name.nombre
+    return (
+      <UserList data={name}/>
       )
-    })
+  }
+  // return days.map(day =>(
+  // 		 	<ForecastItem weekDay = {day}  key={day}  hour = {10} data = {data}></ForecastItem>
+  // 		 	))
+
+  // 
+  renderState() {
+    return (<h3> Inicia Sesion</h3>
+    )
   }
 
+  
   render() {
+    const { data } = this.state
     return (
+      <Grid>
       <div>
         <User onResults={this._handleResults} />
-       
-        
-      <Form inline>
-      <FormGroup controlId="formInlineName">
-      <ControlLabel>Rut usuario</ControlLabel>{' '}
-      <FormControl type="number" placeholder="12-345678-9" />
-      </FormGroup>{' '}
-      <FormGroup controlId="formInlineEmail">
-      <ControlLabel>Clave</ControlLabel>{' '}
-      <FormControl type="password" placeholder="" />
-      </FormGroup>{' '}
-      <Button type="submit">Ingresar</Button>
-      </Form>;
+        { data ?
+          this.renderUser(data)
+          : this.renderState()}
       </div>
+      {/* <Services/>
+
+      <Cargando/>*/}
+      </Grid> 
+
     );
   }
 }
-
 export default App;
