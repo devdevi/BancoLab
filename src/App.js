@@ -37,10 +37,6 @@ class App extends Component {
     }
     const saldo = getRandomInt(40000,1000000)
     return (
-      <Col xs={12} md={3} >
-        <h5>Bienvenid@:{nombre}</h5> 
-       
-      </Col>
       <UserList data={name}/>
       )
   }
@@ -54,6 +50,7 @@ class App extends Component {
     )
   }
 
+  
   render() {
     const { data } = this.state
     return (
