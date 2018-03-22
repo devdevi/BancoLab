@@ -3,8 +3,8 @@ import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Im
 import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
 import User from './components/User';
 import UserList from './components/UserList';
-import Services from './Components/Services';
-import Cargando from './Components/Cargando';
+import Services from './components/Services';
+import Cargando from './components/Cargando';
 
 import './App.css';
 
@@ -16,17 +16,16 @@ class App extends Component {
       data:null,
       nombre:null,
     };
-    
+
   }
   handleTransfer =(event) => {
     event.preventDefault();
     return(
       alert('hello baby')
     )
-  
+
   }
 
-  
   _handleResults = (data) => {
     const name = data.data
     const nombre = name.nombre
