@@ -18,6 +18,15 @@ class App extends Component {
     };
     
   }
+  handleTransfer =(event) => {
+    event.preventDefault();
+    return(
+      alert('hello baby')
+    )
+  
+  }
+
+  
   _handleResults = (data) => {
     const name = data.data
     const nombre = name.nombre
@@ -31,11 +40,6 @@ class App extends Component {
     console.log(data)
     const name = data.data
     const nombre = name.nombre
-   
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-    const saldo = getRandomInt(40000,1000000)
     return (
       <UserList data={name}/>
       )
@@ -61,10 +65,10 @@ class App extends Component {
           this.renderUser(data)
           : this.renderState()}
       </div>
-      <Services/>
+      {/* <Services/>
 
-      <Cargando/>
-      </Grid>
+      <Cargando/>*/}
+      </Grid> 
 
     );
   }

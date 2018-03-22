@@ -1,38 +1,75 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
-import { Table } from 'react-bootstrap'; 
+import { Tabs, Tab, Button } from 'react-bootstrap';
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 
-const Cuentas = ({data}) => (
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+const saldoRut = getRandomInt(40000, 1000000)
+const saldoCorriente = getRandomInt(40000, 1000000)
+const data = [saldoCorriente, saldoRut]
+const wellStyles = { maxWidth: 400, margin: '0 auto 10px' };
 
-  <Table striped bordered condensed hover>
-  <thead>
-    <tr>
-      <th></th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</Table>
-)
-  export default Cuentas;
+var products = [{
+  id: 'CUENTA RUT',
+  name: "Disponible",
+  price: `$ ${data[0]}`
+}, {
+  id: 'CUENTA CORRIENTE',
+  name: "Disponible",
+  price:(`$ ${data[1]}`)
+
+}];
+class Cuentas extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+  
+  renderState() {
+    return (<h3>Procesando Transferencia</h3>
+    )
+  }
+
+render() {
+  return (
+    <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" data={data}>
+      <Tab eventKey={1} title="Mis Productos">
+
+        <BootstrapTable data={products}>
+          <TableHeaderColumn dataField='id' isKey>Cuentas</TableHeaderColumn>
+          <TableHeaderColumn dataField='name' width='150'></TableHeaderColumn>
+          <TableHeaderColumn dataField='price' width='90'></TableHeaderColumn>
+          <TableHeaderColumn dataField='price' width='90'></TableHeaderColumn>
+        </BootstrapTable>
+        <div className="well" style={wellStyles}>
+          <Button bsStyle="warning" bsSize="large" block type="submit" onClick={this.handleClick}>
+            Nueva Transferencia
+          </Button>
+          {this.state.isToggleOn ? 'ON' : this.renderState()}
+  
+        </div>
+
+  </Tab>
+      <Tab eventKey={2} title="Comprobantes" disabled>
+        Tab 2 content
+  </Tab>
+
+    </Tabs>
+
+  )
+}
+}
+
+
+export default Cuentas;

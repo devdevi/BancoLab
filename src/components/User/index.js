@@ -48,10 +48,12 @@ class User extends Component {
       })
     }
 
+  
+
     // Aquí se renderiza el navbar
     render() {
         return (
-            <Navbar className='nav-bar'>
+            <Navbar className='nav-bar' >
                 <Navbar.Header>
                     <Navbar.Brand className='logo'>
                         <a href="index.html"><img height={50} src={logo} alt={''} /></a>
@@ -67,7 +69,7 @@ class User extends Component {
                             <FormControl type="text" value={this.state.value} onChange={this.handleChange} placeholder="12-345678-9" />
                             <ControlLabel>Clave</ControlLabel>{' '}
                             <FormControl type="password" placeholder="" onChange={this.handleChange} />
-                            <Button type="submit" bsStyle='success' >Ingresar</Button>
+                            <Button type="submit" bsStyle='success' id="signIn" >Ingresar</Button>
                             </FormGroup>{' '}
                         <FormGroup controlId="formInlineEmail">
                           </FormGroup>{' '}
