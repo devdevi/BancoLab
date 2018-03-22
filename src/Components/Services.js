@@ -8,7 +8,7 @@ class Services extends Component {
       <div className='Services'>
       <Grid>
   <Row>
-  <Col md={6} mdOffset={3} className="orange">
+  <Col md={6} mdOffset={3} >
   <Row>
     <Col className="space" xs={4} md={4} lg={4}>
       <Image src="http://www.bancoestado.cl/imagenes/_campanas/banca-movil/ico1.png" thumbnail/>

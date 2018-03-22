@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid , Col , Row } from 'react-bootstrap';
 import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
 import User from './components/User';
-import UserList from './components/ProductList';
+import UserList from './components/UserList';
 import Services from './Components/Services';
 import Cargando from './Components/Cargando';
 
@@ -62,6 +62,7 @@ class App extends Component {
           : this.renderState()}
       </div>
       <Services/>
+
       <Cargando/>
       </Grid>
 
