@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import  CuentaOrigen from '../Transferencia/CuentaOrigen'
 
 
 function getRandomInt(min, max) {
@@ -35,9 +36,9 @@ class Cuentas extends Component {
       isToggleOn: !prevState.isToggleOn
     }));
   }
-  
   renderState() {
-    return (<h3>Procesando Transferencia</h3>
+    return (
+    <CuentaOrigen/>
     )
   }
 
@@ -56,9 +57,8 @@ render() {
           <Button bsStyle="warning" bsSize="large" block type="submit" onClick={this.handleClick}>
             Nueva Transferencia
           </Button>
-          {this.state.isToggleOn ? 'ON' : this.renderState()}
-  
         </div>
+        {this.state.isToggleOn ? 'ON' : this.renderState()}
 
   </Tab>
       <Tab eventKey={2} title="Comprobantes" disabled>

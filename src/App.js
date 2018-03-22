@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid , Col , Row } from 'react-bootstrap';
+import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid, Col, Row } from 'react-bootstrap';
 import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
 import User from './components/User';
 import UserList from './components/UserList';
@@ -13,14 +13,14 @@ class App extends Component {
     super();
     this.state = {
       value: '',
-      data:null,
-      nombre:null,
+      data: null,
+      nombre: null,
     };
 
   }
-  handleTransfer =(event) => {
+  handleTransfer = (event) => {
     event.preventDefault();
-    return(
+    return (
       alert('hello baby')
     )
 
@@ -29,10 +29,11 @@ class App extends Component {
   _handleResults = (data) => {
     const name = data.data
     const nombre = name.nombre
-    console.log(name,nombre)
-    this.setState({ data ,
+    console.log(name, nombre)
+    this.setState({
+      data,
       nombre,
-      })
+    })
   }
 
   renderUser(data) {
@@ -40,8 +41,8 @@ class App extends Component {
     const name = data.data
     const nombre = name.nombre
     return (
-      <UserList data={name}/>
-      )
+      <UserList data={name} />
+    )
   }
   // return days.map(day =>(
   // 		 	<ForecastItem weekDay = {day}  key={day}  hour = {10} data = {data}></ForecastItem>
@@ -53,21 +54,21 @@ class App extends Component {
     )
   }
 
-  
+
   render() {
     const { data } = this.state
     return (
       <Grid>
-      <div>
-        <User onResults={this._handleResults} />
-        { data ?
-          this.renderUser(data)
-          : this.renderState()}
-      </div>
-      {/* <Services/>
+        <div>
+          <User onResults={this._handleResults} />
+          {data ?
+            this.renderUser(data)
+            : this.renderState()}
+        </div>
+        {/* <Services/>
 
       <Cargando/>*/}
-      </Grid> 
+      </Grid>
 
     );
   }

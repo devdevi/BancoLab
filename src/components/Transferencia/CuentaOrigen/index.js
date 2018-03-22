@@ -1,8 +1,28 @@
 import React, { Component } from "react";
 import { Breadcrumb, Grid, Row, Col, Glyphicon } from "react-bootstrap";
 import './style.css';
+import CuentaDestino from "../CuentaDestino";
 
 class CuentaOrigen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  renderState() {
+    return (
+    <CuentaDestino/>
+    )
+  }
   render() {
     return <div>
         <div className="container up">
@@ -29,13 +49,15 @@ class CuentaOrigen extends Component {
               <p>$750.000</p>
             </Col>
             <Col xs={2} md={2}>
-              <a href="#">
+              <a href="#" onClick={this.handleClick}>
                 <Glyphicon className="chevron" glyph="chevron-right" />
               </a>
             </Col>
           </Row>
         </Grid>
-      </div>;
+        {this.state.isToggleOn ? 'ON' : this.renderState()}
+      </div>
+    
   }
 }
 

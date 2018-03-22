@@ -95,7 +95,7 @@ class CuentaDestino extends Component {
                   <p>BANCO DEL ESTADO DE CHILE</p>
                 </Col>
                 <Col xs={2} md={2}>
-                  <a href="#">
+                  <a href="#" onClick={this.handleClick}>
                     <Glyphicon className="chevron" glyph="chevron-right" />
                   </a>
                 </Col>
