@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Navbar, Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import ProductList from '../ProductList';
 import $ from 'jquery';
 import logo from './../../img/banco estado.png';
 // import './style.css';
