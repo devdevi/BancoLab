@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid , Col , Row } from 'react-bootstrap';
 import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
-import { Col} from "react-bootstrap";
 import User from './components/User';
 import UserList from './components/ProductList';
+import Services from './Components/Services';
+import Cargando from './Components/Cargando';
+
 import './App.css';
 
 class App extends Component {
@@ -54,13 +57,17 @@ class App extends Component {
   render() {
     const { data } = this.state
     return (
+      <Grid>
       <div>
         <User onResults={this._handleResults} />
         { data ?
           this.renderUser(data)
           : this.renderState()}
-         
       </div>
+      <Services/>
+      <Cargando/>
+      </Grid>
+
     );
   }
 }
