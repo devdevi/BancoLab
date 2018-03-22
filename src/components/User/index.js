@@ -19,7 +19,6 @@ class User extends Component {
         // Llamo a mis funciones declaradas más abajo .bind les pide que estas funciones
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleChangeP = this.handleChangeP.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
