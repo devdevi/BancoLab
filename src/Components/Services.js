@@ -12,6 +12,7 @@ class Services extends Component {
   <Row>
     <Col className="space" xs={4} md={4} lg={4}>
       <Image src="http://www.bancoestado.cl/imagenes/_campanas/banca-movil/ico1.png" thumbnail/>
+      <p>Banca movil</p>
     </Col>
     <Col className="space" xs={4} md={4} lg={4}>
       <Image src="http://www.bancoestado.cl/imagenes/_campanas/banca-movil/ico2.png" thumbnail/>
