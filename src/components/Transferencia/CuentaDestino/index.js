@@ -10,7 +10,8 @@ import {
   ControlLabel,
   FormControl,
   Button,
-  Modal
+  Modal,
+  Table
 } from "react-bootstrap";
 import './style.css';
 
@@ -19,13 +20,13 @@ class CuentaDestino extends Component {
     super(props);
     this.handleHide = this.handleHide.bind(this);
     this.state = {
-      banco: 'Banco Estado',
-      producto: 'Cuenta-Rut',
-      cuenta: '245834748',
-      rut: '2458348',
-      nombre: 'Visaka Devi',
-      mail: 'visidevi@gmai.com',
-      asunto: 'Pago Clases de yoga',
+      banco: '',
+      producto: '',
+      cuenta: '',
+      rut: '',
+      nombre: '',
+      mail: '',
+      asunto: '',
       data: null,
       show: false
     };
@@ -40,9 +41,10 @@ class CuentaDestino extends Component {
     e.preventDefault();
     const transferencia = (JSON.stringify(this.state));
     localStorage.setItem("transfer", JSON.stringify(transferencia));
-    var transferData = JSON.parse(localStorage.getItem("transfer"));
+    var data = JSON.parse(localStorage.getItem("transfer"));
+    this.setState({ data: data });
     console.log(transferencia);
-    console.log(transferData);
+    console.log(data);
   }
 
   render() {
@@ -224,17 +226,11 @@ class CuentaDestino extends Component {
                     >
                       Guardar
                     </Button>
-                    <Button bsStyle="warning" bsSize="large" block type="submit" onClick={this.handleClick}>
+                    <Button bsStyle="warning" bsSize="large" block type="submit" onClick={() => this.setState({ show: true })}
+                    >
                       Transferir
                     </Button>
-                    <div className="modal-container" style={{ height: 200 }}>
-                      <Button
-                        bsStyle="primary"
-                        bsSize="large"
-                        onClick={() => this.setState({ show: true })}
-                      >
-                        Launch contained modal
-                     </Button>
+                    <div className="modal-container">
                       <Modal
                         show={this.state.show}
                         onHide={this.handleHide}
@@ -243,20 +239,69 @@ class CuentaDestino extends Component {
                       >
                         <Modal.Header closeButton>
                           <Modal.Title id="contained-modal-title">
-                            Contained Modal
-                      </Modal.Title>
+                            Transferencia  <h6>{localStorage.getItem('nombre')}</h6>
+                          </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                           <Row>
                             <Col xs={12} md={12}>
-                            <h3>Bienvenid@:{data.nombre}</h3>
-                            <div className="cuentasBox">
-                            </div>
+
+                              <div className="cuentasBox">
+                                <Table responsive>
+                                  <thead>
+                                    <tr>
+                                      <th colSpan="2">Desde</th>
+                                      <th colSpan="2">Hacia</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td><b>Banco</b></td>
+                                      <td><h6>Banco Estado</h6></td>
+                                      <td><strong>Banco</strong></td>
+                                      <td><h6>{this.state.banco}</h6></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Producto:</b></td>
+                                      <td><h6>Cuenta Rut</h6></td>
+                                      <td><b>Producto:</b></td>
+                                      <td><h6>{this.state.producto}</h6></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Rut</b></td>
+                                      <td><h6>{localStorage.getItem('rut')}</h6></td>
+                                      <td><b>Rut</b></td>
+                                      <td><h6>{this.state.rut}</h6></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Nombre</b></td>
+                                      <td><h6>{localStorage.getItem('nombre')}</h6></td>
+                                      <td><b>Nombre</b></td>
+                                      <td><h6>{this.state.nombre}</h6></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Mail</b></td>
+                                      <td><h6>{localStorage.getItem('nombre')}@gmail.com</h6></td>
+                                      <td><b>Mail</b></td>
+                                      <td><h6>{this.state.mail}</h6></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Asunto</b></td>
+                                      <td><h6>{this.state.asunto}</h6></td>
+                                      <td><b>Asunto</b></td>
+                                      <td><h6>{this.state.asunto}</h6></td>
+                                    </tr>
+                                  </tbody>
+                                </Table>
+                              </div>
                             </Col>
                           </Row>
                         </Modal.Body>
                         <Modal.Footer>
-                          <Button onClick={this.handleHide}>Close</Button>
+                          <Button bsStyle="warning" onClick={this.handleHide}>Atras</Button>
+                          <Button bsStyle="warning" onClick={this.handleHide}>Cancelar </Button>
+                          <Button bsStyle="warning" type="submit" onClick={() => this.setState({ show: true })}
+                              >Guardar y Trasferir</Button>
                         </Modal.Footer>
                       </Modal>
                     </div>

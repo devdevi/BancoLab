@@ -1,5 +1,10 @@
 
-h3{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
   text-transform: capitalize;
   color: #848484;
   margin: 20px;
@@ -10,4 +15,10 @@ h3{
 }
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
+}
+th{
+  text-transform: capitalize;
+}
+Table{
+  align-items: center;
 }
