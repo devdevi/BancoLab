@@ -19,13 +19,13 @@ class CuentaDestino extends Component {
     super(props);
     this.handleHide = this.handleHide.bind(this);
     this.state = {
-      banco: null,
-      producto: null,
-      cuenta: null,
-      rut: null,
-      nombre: null,
-      mail: null,
-      asunto: null,
+      banco: 'Banco Estado',
+      producto: 'Cuenta-Rut',
+      cuenta: '245834748',
+      rut: '2458348',
+      nombre: 'Visaka Devi',
+      mail: 'visidevi@gmai.com',
+      asunto: 'Pago Clases de yoga',
       data: null,
       show: false
     };
@@ -38,8 +38,6 @@ class CuentaDestino extends Component {
 
   submit(e) {
     e.preventDefault();
-
-
     const transferencia = (JSON.stringify(this.state));
     localStorage.setItem("transfer", JSON.stringify(transferencia));
     var transferData = JSON.parse(localStorage.getItem("transfer"));
@@ -227,37 +225,41 @@ class CuentaDestino extends Component {
                       Guardar
                     </Button>
                     <Button bsStyle="warning" bsSize="large" block type="submit" onClick={this.handleClick}>
-                    Transferir
+                      Transferir
                     </Button>
                     <div className="modal-container" style={{ height: 200 }}>
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          onClick={() => this.setState({ show: true })}
-        >
-          Launch contained modal
-        </Button>
-
-        <Modal
-          show={this.state.show}
-          onHide={this.handleHide}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">
-              Contained Modal
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id
-            ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.handleHide}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+                      <Button
+                        bsStyle="primary"
+                        bsSize="large"
+                        onClick={() => this.setState({ show: true })}
+                      >
+                        Launch contained modal
+                     </Button>
+                      <Modal
+                        show={this.state.show}
+                        onHide={this.handleHide}
+                        container={this}
+                        aria-labelledby="contained-modal-title"
+                      >
+                        <Modal.Header closeButton>
+                          <Modal.Title id="contained-modal-title">
+                            Contained Modal
+                      </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <Row>
+                            <Col xs={12} md={12}>
+                            <h3>Bienvenid@:{data.nombre}</h3>
+                            <div className="cuentasBox">
+                            </div>
+                            </Col>
+                          </Row>
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button onClick={this.handleHide}>Close</Button>
+                        </Modal.Footer>
+                      </Modal>
+                    </div>
                   </Form>;
                 </Col>
               </Row>
