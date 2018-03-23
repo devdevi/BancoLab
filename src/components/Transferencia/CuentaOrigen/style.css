@@ -43,7 +43,8 @@
   width: 35px;
   background-color: #afafb3;
   padding: 8px;
-  margin-right: 7px;
+  margin-right: 0px;
+  margin-left: 6px;
 }
 
 .medio {
@@ -55,9 +56,14 @@
   margin-left: -15px;
 }
 
+#transf-ctaOrigen {
+  height: 100vh;
+}
+
 .cuentasOrigen {
   border: 1px solid #eee;
   padding: 20px;
+  margin-bottom: 35em;
 }
 
 .chevron {

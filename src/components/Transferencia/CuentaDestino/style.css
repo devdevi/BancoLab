@@ -111,10 +111,15 @@
 }
 
 .btn-ctanueva {
-  background-color: #f49600;
-  color: #fff;
+  border-radius: 25px;
   border: none;
+  background-color: #F49600;
+  color: #fff;
+  height: 55px;
   width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 .btn-transferir {
@@ -123,7 +128,19 @@
   border: none;
   width: 100%;
 }
-/* .show-grid{
-  margin: .4em;
-  border: .5px solid  gray;
-} */
+
+#ctaDestino {
+  height: 100vh;
+}
+
+#btnTransferir2 {
+  border-radius: 25px;
+  border: none;
+  background-color: #F49600;
+  color: #fff;
+  height: 55px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 5px;
+}
