@@ -4,7 +4,7 @@ import { Navbar, Form, FormGroup, ControlLabel, FormControl, Button } from 'reac
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import logo from './../../img/banco estado.png';
-// import './style.css';
+import './style.css';
 
 // Inicio el componente de clase
 class User extends Component {
@@ -50,29 +50,27 @@ class User extends Component {
     }
     // Aquí se renderiza el navbar
     render() {
-        return (
-            <Navbar className='nav-bar' >
-                <Navbar.Header>
-                    <Navbar.Brand className='logo'>
-                        <a href="index.html"><img height={50} src={logo} alt={''} /></a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse className='container-form'>
-                    <Navbar.Form className='form-search'>
-                        <Form onSubmit={this.handleSubmit}>
-                            <FormGroup >
-                                <ControlLabel>Rut usuario</ControlLabel>{' '}
-                                <FormControl type="text" value={this.state.value} onChange={this.handleChange} placeholder="12-345678-9" />
-                                <ControlLabel>Clave</ControlLabel>{' '}
-                                <FormControl type="password" placeholder=" "  value={this.state.val} onChange={this.handleChange}/>
-                                <Button type="submit" bsStyle='success' id="signIn">Ingresar</Button>
-                            </FormGroup>{' '}
-                        </Form>
-                    </Navbar.Form>
-                </Navbar.Collapse>
-            </Navbar>
-        )
+        return <Navbar className="nav-bar">
+            <Navbar.Header>
+              <Navbar.Brand className="logo">
+                <a href="index.html">
+                  <img height={50} src={logo} alt={""} id="logo"/>
+                </a>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse className="container-form">
+              <Navbar.Form className="form-search">
+                <Form onSubmit={this.handleSubmit}>
+                  <FormGroup>
+                    <ControlLabel>Rut usuario</ControlLabel> <FormControl type="text" value={this.state.value} onChange={this.handleChange} placeholder="12-345678-9" />
+                    <ControlLabel>Clave</ControlLabel> <FormControl type="password" placeholder=" " value={this.state.val} onChange={this.handleChange} />
+                    <input type="submit" id="signIn" value="Ingresar" />
+                  </FormGroup>{" "}
+                </Form>
+              </Navbar.Form>
+            </Navbar.Collapse>
+          </Navbar>;
     }
 }
 

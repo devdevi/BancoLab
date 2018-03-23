@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid, Col, Row } from 'react-bootstrap';
 import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
-import User from './components/User';
-import UserList from './components/UserList';
-import Services from './components/Services';
-import Cargando from './components/Cargando';
+import User from './Components/User';
+import UserList from './Components/UserList';
+import Services from './Components/Services';
+import Cargando from "./Components/Cargando";
 
 import './App.css';
 

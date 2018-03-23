@@ -29,7 +29,7 @@ console.log(rut )
   }
   render() {
     const  {data} =this.props;
-    return <div>
+    return <div id="transf-ctaOrigen">
         <div className="container up">
           <div className="row">
             <h4>Transferencia</h4>
@@ -60,8 +60,8 @@ console.log(rut )
             </Col>
           </Row>
         </Grid>
-        {this.state.isToggleOn ? 'ON' : this.renderState()}
-      </div>
+        {this.state.isToggleOn ? "ON" : this.renderState()}
+      </div>;
   }
 }
 

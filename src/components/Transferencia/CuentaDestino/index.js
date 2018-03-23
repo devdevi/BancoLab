@@ -49,8 +49,7 @@ class CuentaDestino extends Component {
 
   render() {
     const data = JSON.stringify(this.state);
-    return (
-      <div>
+    return <div id="ctaDestino">
         <div className="container up">
           <div className="row">
             <h4>Transferencia</h4>
@@ -68,39 +67,18 @@ class CuentaDestino extends Component {
         </Breadcrumb>
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item active">
-            <a
-              className="nav-link active"
-              id="home-tab"
-              data-toggle="tab"
-              href="#home"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
+            <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
               Cuenta Frecuente
             </a>
           </li>
           <li className="nav-item tab">
-            <a
-              className="nav-link"
-              id="profile-tab"
-              data-toggle="tab"
-              href="#profile"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-            >
+            <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
               Cuenta Nueva
             </a>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
-          <div
-            className="tab-pane fade active in"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          >
+          <div className="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
             <Grid className="cuentasFrecuente">
               <Row className="show-grid cuentasOrigen">
                 <Col xs={10} md={10} className="izquierda">
@@ -152,29 +130,20 @@ class CuentaDestino extends Component {
               </Row>
             </Grid>
           </div>
-          <div
-            className="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          >
+          <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <Grid className="cuentasNueva">
               <Row className="show-grid cuentasOrigen">
                 <Col xs={12} md={12} className="izquierda">
                   <Form inline>
                     <FormGroup className="izquierda">
                       <ControlLabel>Banco</ControlLabel>
-                      <FormControl
-                        id="banco"
-                        componentClass="select"
-                        placeholder="select"
-                        value={this.state.banco}
-                        onChange={this.getBanco.bind(this)}
-                      >
+                      <FormControl id="banco" componentClass="select" placeholder="select" value={this.state.banco} onChange={this.getBanco.bind(this)}>
                         <option value="sele">
                           Seleccione Banco de Destino
                         </option>
-                        <option value="Banco de Chile">Banco de Chile</option>
+                        <option value="Banco de Chile">
+                          Banco de Chile
+                        </option>
                         <option value="Bancoestado">Bancoestado</option>
                         <option value="BCI">BCI</option>
                         <option value="Itaú">Itaú</option>
@@ -182,14 +151,10 @@ class CuentaDestino extends Component {
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>Producto</ControlLabel>
-                      <FormControl
-                        id="producto"
-                        componentClass="select"
-                        placeholder="select"
-                        value={this.state.producto}
-                        onChange={this.getProd.bind(this)}
-                      >
-                        <option value="sele">Seleccione Tipo de Cuenta</option>
+                      <FormControl id="producto" componentClass="select" placeholder="select" value={this.state.producto} onChange={this.getProd.bind(this)}>
+                        <option value="sele">
+                          Seleccione Tipo de Cuenta
+                        </option>
                         <option value="Cuenta Corriente">
                           Cuenta Corriente
                         </option>
@@ -207,81 +172,42 @@ class CuentaDestino extends Component {
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>N° de Cuenta</ControlLabel>
-                      <FormControl
-                        id="cuenta"
-                        type="number"
-                        placeholder="Ingresa cuenta"
-                        value={this.state.cuenta}
-                        onChange={this.getCuenta.bind(this)}
-                      />
+                      <FormControl id="cuenta" type="number" placeholder="Ingresa cuenta" value={this.state.cuenta} onChange={this.getCuenta.bind(this)} />
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>Rut</ControlLabel>
-                      <FormControl
-                        id="rut"
-                        type="number"
-                        placeholder="111111111"
-                        value={this.state.rut}
-                        onChange={this.getRut.bind(this)}
-                      />
+                      <FormControl id="rut" type="number" placeholder="111111111" value={this.state.rut} onChange={this.getRut.bind(this)} />
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>Nombre</ControlLabel>
-                      <FormControl
-                        id="nombre"
-                        type="text"
-                        placeholder="Ingrese Nombre"
-                        value={this.state.nombre}
-                        onChange={this.getNombre.bind(this)}
-                      />
+                      <FormControl id="nombre" type="text" placeholder="Ingrese Nombre" value={this.state.nombre} onChange={this.getNombre.bind(this)} />
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>Email</ControlLabel>
-                      <FormControl
-                        id="mail"
-                        type="email"
-                        placeholder="asd@asd.cl"
-                        value={this.state.mail}
-                        onChange={this.getMail.bind(this)}
-                      />
+                      <FormControl id="mail" type="email" placeholder="asd@asd.cl" value={this.state.mail} onChange={this.getMail.bind(this)} />
                     </FormGroup>
                     <FormGroup className="izquierda">
                       <ControlLabel>Asunto</ControlLabel>
-                      <FormControl
-                        id="asunto"
-                        type="text"
-                        placeholder="Dinero para pan"
-                        value={this.state.asunto}
-                        onChange={this.getAsunto.bind(this)}
-                      />
+                      <FormControl id="asunto" type="text" placeholder="Dinero para pan" value={this.state.asunto} onChange={this.getAsunto.bind(this)} />
                     </FormGroup>
-                    <Button bsStyle="warning"
-                      className="btn-ctanueva"
-                      type="button"
-                      onClick={this.submit.bind(this)}
-                    >
-                      Guardar
-                    </Button>
-                    <Button bsStyle="warning" bsSize="large" block type="submit" onClick={() => this.setState({ show: true })}
-                    >
-                      Transferir
-                    </Button>
+                    <input
+                      type="button" className="btn-ctanueva" type="button" value="Guardar" onClick={this.submit.bind(this)}/>
+                     
+                    <input id="btnTransferir2" block type="submit" value="Transferir" onClick={() => this.setState(
+                          { show: true }
+                        )}/>
                     <div className="modal-container">
-                      <Modal
-                        show={this.state.show}
-                        onHide={this.handleHide}
-                        container={this}
-                        aria-labelledby="contained-modal-title"
-                      >
+                      <Modal show={this.state.show} onHide={this.handleHide} container={this} aria-labelledby="contained-modal-title">
                         <Modal.Header closeButton>
                           <Modal.Title id="contained-modal-title">
-                            Transferencia  <h6>{localStorage.getItem('nombre')}</h6>
+                            Transferencia <h6>
+                              {localStorage.getItem("nombre")}
+                            </h6>
                           </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                           <Row>
                             <Col xs={12} md={12}>
-
                               <div className="cuentasBox">
                                 <Table responsive>
                                   <thead>
@@ -292,40 +218,94 @@ class CuentaDestino extends Component {
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td><b>Banco</b></td>
-                                      <td><h6>Banco Estado</h6></td>
-                                      <td><strong>Banco</strong></td>
-                                      <td><h6>{this.state.banco}</h6></td>
+                                      <td>
+                                        <b>Banco</b>
+                                      </td>
+                                      <td>
+                                        <h6>Banco Estado</h6>
+                                      </td>
+                                      <td>
+                                        <strong>Banco</strong>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.banco}</h6>
+                                      </td>
                                     </tr>
                                     <tr>
-                                      <td><b>Producto:</b></td>
-                                      <td><h6>Cuenta Rut</h6></td>
-                                      <td><b>Producto:</b></td>
-                                      <td><h6>{this.state.producto}</h6></td>
+                                      <td>
+                                        <b>Producto:</b>
+                                      </td>
+                                      <td>
+                                        <h6>Cuenta Rut</h6>
+                                      </td>
+                                      <td>
+                                        <b>Producto:</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.producto}</h6>
+                                      </td>
                                     </tr>
                                     <tr>
-                                      <td><b>Rut</b></td>
-                                      <td><h6>{localStorage.getItem('rut')}</h6></td>
-                                      <td><b>Rut</b></td>
-                                      <td><h6>{this.state.rut}</h6></td>
+                                      <td>
+                                        <b>Rut</b>
+                                      </td>
+                                      <td>
+                                        <h6>
+                                          {localStorage.getItem("rut")}
+                                        </h6>
+                                      </td>
+                                      <td>
+                                        <b>Rut</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.rut}</h6>
+                                      </td>
                                     </tr>
                                     <tr>
-                                      <td><b>Nombre</b></td>
-                                      <td><h6>{localStorage.getItem('nombre')}</h6></td>
-                                      <td><b>Nombre</b></td>
-                                      <td><h6>{this.state.nombre}</h6></td>
+                                      <td>
+                                        <b>Nombre</b>
+                                      </td>
+                                      <td>
+                                        <h6>
+                                          {localStorage.getItem("nombre")}
+                                        </h6>
+                                      </td>
+                                      <td>
+                                        <b>Nombre</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.nombre}</h6>
+                                      </td>
                                     </tr>
                                     <tr>
-                                      <td><b>Mail</b></td>
-                                      <td><h6>{localStorage.getItem('nombre')}@gmail.com</h6></td>
-                                      <td><b>Mail</b></td>
-                                      <td><h6>{this.state.mail}</h6></td>
+                                      <td>
+                                        <b>Mail</b>
+                                      </td>
+                                      <td>
+                                        <h6>
+                                          {localStorage.getItem("nombre")}@gmail.com
+                                        </h6>
+                                      </td>
+                                      <td>
+                                        <b>Mail</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.mail}</h6>
+                                      </td>
                                     </tr>
                                     <tr>
-                                      <td><b>Asunto</b></td>
-                                      <td><h6>{this.state.asunto}</h6></td>
-                                      <td><b>Asunto</b></td>
-                                      <td><h6>{this.state.asunto}</h6></td>
+                                      <td>
+                                        <b>Asunto</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.asunto}</h6>
+                                      </td>
+                                      <td>
+                                        <b>Asunto</b>
+                                      </td>
+                                      <td>
+                                        <h6>{this.state.asunto}</h6>
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </Table>
@@ -334,10 +314,17 @@ class CuentaDestino extends Component {
                           </Row>
                         </Modal.Body>
                         <Modal.Footer>
-                          <Button bsStyle="warning" onClick={this.handleHide}>Atras</Button>
-                          <Button bsStyle="warning" onClick={this.handleHide}>Cancelar </Button>
-                          <Button bsStyle="warning" type="submit" onClick={() => this.setState({ show: true })}
-                              >Guardar y Trasferir</Button>
+                          <Button bsStyle="warning" onClick={this.handleHide}>
+                            Atras
+                          </Button>
+                          <Button bsStyle="warning" onClick={this.handleHide}>
+                            Cancelar{" "}
+                          </Button>
+                          <Button bsStyle="warning" type="submit" onClick={() => this.setState(
+                                { show: true }
+                              )}>
+                            Guardar y Trasferir
+                          </Button>
                         </Modal.Footer>
                       </Modal>
                     </div>
@@ -347,8 +334,7 @@ class CuentaDestino extends Component {
             </Grid>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 
   getBanco(event) {
