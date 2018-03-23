@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Michael Carvajal",
+      "rut": "16989654-7"
+    },
+
+    {
+      "id": 2,
+      "name": "Maria Solaris",
+      "rut": "16989654-7",
+
+    },
+
+    {
+      "id": 3,
+      "name": "francisco Zuñiga",
+      "rut": "11989633-7",
+    }
+  ]
+}
