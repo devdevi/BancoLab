@@ -1,0 +1,129 @@
+.up {
+  text-align: center;
+}
+
+.up h4 {
+  color: #848484;
+  margin: 20px;
+}
+
+#division {
+  height: 10px;
+  background-color: #eaeaea;
+  margin-bottom: 10px;
+}
+
+.nav-tabs .nav-item {
+  width: 50%;
+  background-color: #a2a2a2;
+}
+
+.nav-tabs .nav-item a {
+  color: #5f6367;
+}
+
+.contenedorUL {
+  height: 50px;
+}
+
+.activo {
+  height: 35px;
+  width: 70%;
+  background-color: #afafb3;
+  padding: 8px;
+  float: left;
+}
+
+.activo a {
+  color: #fff;
+}
+
+.inactivo {
+  height: 35px;
+  width: 35px;
+  background-color: #afafb3;
+  padding: 8px;
+  margin-right: 7px;
+}
+
+.medio {
+  margin-right: 2%;
+}
+
+.inactivo a {
+  color: #fff;
+  margin-left: -15px;
+}
+
+.cuentasOrigen {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.chevron {
+  font-size: 2em;
+  padding-top: 10px;
+  padding-right: 5px;
+  color: #f49600;
+}
+
+.activo2 {
+  height: 35px;
+  width: 70%;
+  background-color: #afafb3;
+  padding: 8px;
+  margin-right: 2%;
+}
+
+.activo2 a {
+  color: #fff;
+}
+
+.inactivo2 {
+  height: 35px;
+  width: 35px;
+  background-color: #afafb3;
+  padding: 8px;
+  margin-right: 7px;
+  float: left;
+}
+
+.medio {
+  margin-right: 2%;
+}
+
+.inactivo2 a {
+  color: #fff;
+}
+
+.cuentasDestinoM {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.izquierda {
+  text-align: left;
+}
+
+#cuentasFrecuente {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.btn-ctanueva {
+  background-color: #f49600;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+
+.btn-transferir {
+  background-color: #f49600;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+/* .show-grid{
+  margin: .4em;
+  border: .5px solid  gray;
+} */
