@@ -33,7 +33,7 @@ class User extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const { value } = this.state
-        fetch(`https://api.rutify.cl/rut/181383828`)
+        fetch(`https://api.rutify.cl/rut/${value}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
