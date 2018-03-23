@@ -5,10 +5,11 @@ import Cuentas from '../Cuentas';
 const UserList = ({data}) => {
   return(
     <Col xs={12} md={12}>
-              <h5>Bienvenida(o):{data.nombre}</h5>
-              <Cuentas/>  
+      <h3>Bienvenid@:{data.nombre}</h3>
+          <div className="cuentasBox">
+              <Cuentas/>
+              </div>
      </Col>
-          
   )
 }
   export default UserList;

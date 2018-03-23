@@ -18,15 +18,7 @@ class App extends Component {
     };
 
   }
-  handleTransfer = (event) => {
-    event.preventDefault();
-    return (
-      alert('hello baby')
-    )
-
-  }
-
-  _handleResults = (data) => {
+handleResults = (data) => {
     const name = data.data
     const nombre = name.nombre
     console.log(name, nombre)
@@ -35,38 +27,30 @@ class App extends Component {
       nombre,
     })
   }
-
   renderUser(data) {
     console.log(data)
     const name = data.data
-    const nombre = name.nombre
+    localStorage.setItem("nombre",name.nombre,);
+    localStorage.setItem( "rut",name.rut);
     return (
       <UserList data={name} />
     )
   }
-  // return days.map(day =>(
-  // 		 	<ForecastItem weekDay = {day}  key={day}  hour = {10} data = {data}></ForecastItem>
-  // 		 	))
-
-  // 
   renderState() {
     return (<h3> Inicia Sesion</h3>
     )
   }
-
-
   render() {
     const { data } = this.state
     return (
       <Grid>
         <div>
-          <User onResults={this._handleResults} />
+          <User onResults={this.handleResults} />
           {data ?
             this.renderUser(data)
             : this.renderState()}
         </div>
         {/* <Services/>
-
       <Cargando/>*/}
       </Grid>
 

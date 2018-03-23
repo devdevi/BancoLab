@@ -26,14 +26,13 @@ class User extends Component {
     handleChange(event) {
         this.setState({
             value: event.target.value,
+            val: event.target.value,
         });
     }
-
     // Funcion que toma el valor y poder usarlo
     handleSubmit(event) {
         event.preventDefault();
         const { value } = this.state
-        const{val}= this.state
         fetch(`https://api.rutify.cl/rut/${value}`)
             .then(res => res.json())
             .then(data => {
@@ -43,14 +42,12 @@ class User extends Component {
                 this.props.onResults(results)
                 this.setState({
                     value: '',
+                    val: '',
                     user: { data }
                 })
                 console.log('pinta')
             })
     }
-
-
-
     // Aquí se renderiza el navbar
     render() {
         return (
@@ -64,14 +61,12 @@ class User extends Component {
                 <Navbar.Collapse className='container-form'>
                     <Navbar.Form className='form-search'>
                         <Form onSubmit={this.handleSubmit}>
-                            <FormGroup controlId="formInlineName">
+                            <FormGroup >
                                 <ControlLabel>Rut usuario</ControlLabel>{' '}
                                 <FormControl type="text" value={this.state.value} onChange={this.handleChange} placeholder="12-345678-9" />
                                 <ControlLabel>Clave</ControlLabel>{' '}
-                                <FormControl type="password" placeholder=" " onChange={this.handleChangeP} value={this.state.val}/>
-                                <Button type="submit" bsStyle='success' id="signIn"  >Ingresar</Button>
-                            </FormGroup>{' '}
-                            <FormGroup controlId="formInlineEmail">
+                                <FormControl type="password" placeholder=" "  value={this.state.val} onChange={this.handleChange}/>
+                                <Button type="submit" bsStyle='success' id="signIn">Ingresar</Button>
                             </FormGroup>{' '}
                         </Form>
                     </Navbar.Form>

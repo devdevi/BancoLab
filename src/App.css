@@ -1,4 +1,13 @@
 
-h5{
+h3{
   text-transform: capitalize;
+  color: #848484;
+  margin: 20px;
+  font-weight: 500;
+}
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
 }

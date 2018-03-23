@@ -3,27 +3,32 @@ import { Breadcrumb, Grid, Row, Col, Glyphicon } from "react-bootstrap";
 import './style.css';
 import CuentaDestino from "../CuentaDestino";
 
-class CuentaOrigen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
 
+
+
+class CuentaOrigen extends Component {
+  constructor(props ) {
+    super(props);
+    this.state = {
+      isToggleOn: true
+    };
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
+    const rut = localStorage.getItem("rut");
+console.log(rut )
   }
-
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
   }
-
   renderState() {
     return (
     <CuentaDestino/>
     )
   }
   render() {
+    const  {data} =this.props;
     return <div>
         <div className="container up">
           <div className="row">
@@ -42,11 +47,11 @@ class CuentaOrigen extends Component {
           <Row className="show-grid">
             <Col xs={5} md={5}>
               <p>CUENTA RUT</p>
-              <p>XXXX-1171</p>
+              <p>({localStorage.getItem("rut")})</p>
             </Col>
             <Col xs={5} md={5}>
               <p>Disponible:</p>
-              <p>$750.000</p>
+              <p>${data[0]}</p>
             </Col>
             <Col xs={2} md={2}>
               <a href="#" onClick={this.handleClick}>
@@ -57,7 +62,6 @@ class CuentaOrigen extends Component {
         </Grid>
         {this.state.isToggleOn ? 'ON' : this.renderState()}
       </div>
-    
   }
 }
 
