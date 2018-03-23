@@ -9,8 +9,10 @@
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
-  },"scripts": {
+    "react-scripts": "1.1.1",
+    "gh-pages": "^1.1.0"
+  },
+  "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
@@ -18,6 +20,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://visidevi.github.io/BancoLab"
-
+  "homepage": "https://visidevi.github.io/BancoLab/"
 }
