@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid , Col , Row } from 'react-bootstrap';
+import {  Image, Grid , Col , Row } from 'react-bootstrap';
 import './Services.css';
 
 class Services extends Component {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Navbar, ProgressBar, Nav, NavItem, NavDropdown, MenuItem, Image, Grid, Col, Row } from 'react-bootstrap';
-import { Form, FormGroup, ControlLabel, FormControl, Button, BootstrapTable, TableHeaderColumn } from 'react-bootstrap';
+import { ProgressBar, Grid, Col, Row, ResponsiveEmbed } from 'react-bootstrap';
 import User from './components/User';
 import UserList from './components/UserList';
 import Services from './components/Services';
@@ -18,7 +17,7 @@ class App extends Component {
     };
 
   }
-handleResults = (data) => {
+  handleResults = (data) => {
     const name = data.data
     const nombre = name.nombre
     console.log(name, nombre)
@@ -30,27 +29,35 @@ handleResults = (data) => {
   renderUser(data) {
     console.log(data)
     const name = data.data
-    localStorage.setItem("nombre",name.nombre,);
-    localStorage.setItem( "rut",name.rut);
+    localStorage.setItem("nombre", name.nombre, );
+    localStorage.setItem("rut", name.rut);
     return (
       <UserList data={name} />
     )
   }
   renderState() {
-    return (<h3> Inicia Sesion</h3>
+    return (
+      <h3>Bienvenid@ </h3>
+
     )
   }
   render() {
     const { data } = this.state
     return (
       <Grid>
-        <div>
+        <Row className="show-grid">
           <User onResults={this.handleResults} />
           {data ?
             this.renderUser(data)
             : this.renderState()}
-        </div>
-        {/* <Services/>
+
+          <div >
+            <ResponsiveEmbed a16by9>
+              <Services />
+            </ResponsiveEmbed>
+          </div>
+        </Row>
+        {/*
       <Cargando/>*/}
       </Grid>
 

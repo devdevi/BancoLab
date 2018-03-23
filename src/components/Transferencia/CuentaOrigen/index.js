@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { Breadcrumb, Grid, Row, Col, Glyphicon } from "react-bootstrap";
 import './style.css';
 import CuentaDestino from "../CuentaDestino";
-
-
-
-
+import $ from 'jquery';
 class CuentaOrigen extends Component {
-  constructor(props ) {
+  constructor(props) {
     super(props);
     this.state = {
       isToggleOn: true
@@ -15,21 +12,23 @@ class CuentaOrigen extends Component {
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
     const rut = localStorage.getItem("rut");
-console.log(rut )
+    console.log(rut)
   }
   handleClick() {
+    $('#secondSection').hide();
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
   }
   renderState() {
     return (
-    <CuentaDestino/>
+      <CuentaDestino />
     )
   }
   render() {
-    const  {data} =this.props;
+    const { data } = this.props;
     return <div>
+      <div id="secondSection">
         <div className="container up">
           <div className="row">
             <h4>Transferencia</h4>
@@ -60,8 +59,10 @@ console.log(rut )
             </Col>
           </Row>
         </Grid>
-        {this.state.isToggleOn ? 'ON' : this.renderState()}
       </div>
+      {this.state.isToggleOn ? '' : this.renderState()}
+    </div>
+
   }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import  CuentaOrigen from '../Transferencia/CuentaOrigen'
+import $ from 'jquery';
 
 
 function getRandomInt(min, max) {
@@ -10,6 +11,7 @@ function getRandomInt(min, max) {
 const saldoRut = getRandomInt(40000, 1000000)
 const saldoCorriente = getRandomInt(40000, 1000000)
 const data = [saldoCorriente, saldoRut]
+localStorage.setItem('saldoRut', saldoRut)
 const wellStyles = { maxWidth: 400, margin: '0 auto 10px' };
 
 var products = [{
@@ -33,6 +35,7 @@ class Cuentas extends Component {
   }
 
   handleClick() {
+    $('#oneSection').hide();
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
@@ -47,8 +50,8 @@ render() {
   return (
     <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" data={data}>
       <Tab eventKey={1} title="Mis Productos">
-
-        <BootstrapTable data={products}>
+      <div id="oneSection">
+        <BootstrapTable data={products} >
           <TableHeaderColumn dataField='id' isKey>Cuentas</TableHeaderColumn>
           <TableHeaderColumn dataField='name' width='150'></TableHeaderColumn>
           <TableHeaderColumn dataField='price' width='90'></TableHeaderColumn>
@@ -59,13 +62,12 @@ render() {
             Nueva Transferencia
           </Button>
         </div>
-        {this.state.isToggleOn ? 'ON' : this.renderState()}
-
+        </div>
+        {this.state.isToggleOn ? '' : this.renderState()}
   </Tab>
       <Tab eventKey={2} title="Comprobantes" disabled>
         Tab 2 content
   </Tab>
-
     </Tabs>
 
   )

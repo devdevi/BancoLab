@@ -33,7 +33,7 @@ class User extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const { value } = this.state
-        fetch(`https://api.rutify.cl/rut/${value}`)
+        fetch(`https://api.rutify.cl/rut/181383828`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -51,7 +51,7 @@ class User extends Component {
     // Aquí se renderiza el navbar
     render() {
         return (
-            <Navbar className='nav-bar' >
+            <Navbar collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand className='logo'>
                         <a href="index.html"><img height={50} src={logo} alt={''} /></a>
@@ -61,12 +61,12 @@ class User extends Component {
                 <Navbar.Collapse className='container-form'>
                     <Navbar.Form className='form-search'>
                         <Form onSubmit={this.handleSubmit}>
-                            <FormGroup >
+                            <FormGroup>
                                 <ControlLabel>Rut usuario</ControlLabel>{' '}
                                 <FormControl type="text" value={this.state.value} onChange={this.handleChange} placeholder="12-345678-9" />
                                 <ControlLabel>Clave</ControlLabel>{' '}
                                 <FormControl type="password" placeholder=" "  value={this.state.val} onChange={this.handleChange}/>
-                                <Button type="submit" bsStyle='success' id="signIn">Ingresar</Button>
+                                <Button type="submit" bsStyle='warning' id="signIn">Ingresar</Button>
                             </FormGroup>{' '}
                         </Form>
                     </Navbar.Form>
