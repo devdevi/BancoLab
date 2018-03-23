@@ -150,18 +150,6 @@ class CuentaDestino extends Component {
                   </a>
                 </Col>
               </Row>
-              <Row className="show-grid cuentasOrigen">
-                <Col xs={10} md={10} className="izquierda">
-                  <p>Roberto Pérez</p>
-                  <p>CUENTA RUT (000000000011111111)</p>
-                  <p>BANCO DEL ESTADO DE CHILE</p>
-                </Col>
-                <Col xs={2} md={2}>
-                  <a href="#" onClick={this.handleClick}>
-                    <Glyphicon className="chevron" glyph="chevron-right" />
-                  </a>
-                </Col>
-              </Row>
             </Grid>
           </div>
           <div
