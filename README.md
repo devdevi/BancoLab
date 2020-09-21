@@ -11,14 +11,14 @@
 Dedicamos investigación primero una ronda entre cada uno de los miembros del equipo haciéndonos las siguientes preguntas: ¿Qué App que tengo en mi celular que uso regularmente tiene mala experiencia de usuario a mi parecer? el objetivo de esta pregunta era : 1. Establecer confianza entre los miembros; 2. Identificar  mala experiencia  usuario de una app que tenga altos índices de descarga o que fuera usada regularmente entre los miembros del equipo, este segundo punto con el fin para desarrollar un proyecto que pueda tener sentido para el staff completo.  
 Luego de investigar en AppStore y PlayStore app que cumplieran con el requerimiento del reto, ideas e intercambios de opiniones en el equipo,  se realizó un listado preliminar:
 
-![IMG](http://i63.tinypic.com/2vl8w3q.jpg)
+
 
 Se realizó una votación, en la cual finalmente se decidió usar la App de Banco Estado por los siguientes motivos:
 
 1. Pertenece a Banco Estado, el cual es de uso masivo entre los chilenos. Actualmente tiene 10.081 de valoraciones, si bien es de 3.6 el promedio, analizamos que el porcentaje de personas con puntuación de una estrella es el segundo mayor luego de la puntuación de 5 estrellas. Esto nos llevó a las siguientes preguntas: *¿Porqué la App de Banco Estado a pesar de tener una valoración superior al 2.5 es valorada por los usuarios de forma negativa?
 ¿O porqué la App es percibida en forma negativa si no está mal calificada?*
 
-![IMG](http://i67.tinypic.com/2cibfys.jpg)
+
 
 
 2. El equipo vió una oportunidad en el ámbito de trabajo técnico Front-end y un desafío en el aspecto UX.
