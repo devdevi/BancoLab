@@ -32,7 +32,6 @@ Para responder nuestras preguntas, revisamos los comentarios de los usuarios en 
 
 - Reclamos por funcionalidades que no están disponibles y que les gustaría que tuvieran.
 
-![IMG](http://drive.google.com/uc?export=view&id=1zwME65RqgIxDjIn6RSk4RCrUkXD9_1Rm)
 
 
 Entre estas últimas calificaciones, encontramos una funcionalidad que muchos solicitaban para poder calificar en forma positiva la aplicación: la capacidad de transferir a terceros directamente desde el celular sin tener que pasar por el sitio web para agregar los destinatarios de la transacción:
@@ -152,9 +151,9 @@ Ofrecer una imagen de cercanía sin quitar la formalidad de un banco| iconos de 
 ### Task Flow
 Este task Flow de hizo analizando los puntos que requiere agregar una nueva cuenta para hacer un despósito.
 
-![IMG](http://i64.tinypic.com/2z3q3r4.jpg)
 
-[Ver imagen full resolución](http://i65.tinypic.com/15gzg9g.jpg)
+
+
 
 ### Scketch
 Se hizo un scketch preliminar que se llevó a un programa de prototypado para ser testeado el flujo de tarea y luego construir el wireframe mas rápido.
@@ -164,9 +163,7 @@ Se hizo un scketch preliminar que se llevó a un programa de prototypado para se
 Se dedidió hacer un prototipo de alta fidelidad para poder ser entregado al equipo front y así desarrollar de mejor manera, por ello se realizó en Figma que permite copiar el código en CSS.
 
 
-![Wireframe](http://i68.tinypic.com/2ducwow.png)
-![Wireframe](http://i67.tinypic.com/r8ilv5.png)
-![Wireframe](http://i63.tinypic.com/be7p8j.jpg)
+
 
 [Wireframe](https://www.figma.com/proto/gncudFk7eiSc5dnY5wZBj6rS/Banco-Estado?scaling=contain&node-id=3%3A1)
 
